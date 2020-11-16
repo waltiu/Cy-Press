@@ -30,7 +30,7 @@ describe('demo项目测试', function () {
       cy.get('.el-form-item__content > .el-input > .el-input__inner').type('测试表单')
       cy.get('.el-select > .el-input > .el-input__inner').click()
       cy.wait(500)
-      cy.get('.el-select-dropdown__wrap > .el-scrollbar__view > :nth-child(2)').click()
+      cy.get('.el-select-dropdown__wrap > .el-scrollbar__view > :nth-child(2)').contains('小天才').click()
       cy.wait(500)
       
       cy.get(':nth-child(1) > .el-date-editor > .el-input__inner').type('2020-11-04')
@@ -38,9 +38,16 @@ describe('demo项目测试', function () {
       cy.get('.confirm').click()
       cy.wait(500)
       cy.get('.el-cascader > .el-input > .el-input__inner').click()
+      cy.wait(500)
      cy.contains('广东省').click()
+     cy.wait(500)
+
      cy.contains('广州市').click()
+     cy.wait(500)
+
      cy.contains('海珠区').click()
+     cy.wait(500)
+
      cy.get('.el-switch__core').click()
      cy.get(':nth-child(3) > .el-checkbox__label').click()
      cy.get(':nth-child(1) > .el-radio__label').click()
